@@ -1,0 +1,22 @@
+package bus;
+import java.util.*;
+import java.lang.*;
+class scoe_bus extends Thread
+{
+	public void run()
+	{
+		
+	}
+}
+public class bus
+{
+	public static void main(String args[])
+	{
+		scoe_bus s1=new scoe_bus("Akanksha");
+		s1.start();
+		scoe_bus s2=new scoe_bus("Sanskkruti");
+		s2.start();
+		scoe_bus s3=new scoe_bus("Priyanka");
+		s3.start();
+	}
+}

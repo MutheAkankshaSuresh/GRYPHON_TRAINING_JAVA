@@ -1,0 +1,238 @@
+package RCOE;
+import java.util.*; // Scanner and HashMap
+import java.text.*; // DecimalFormat
+
+class Account {
+    Scanner sc = new Scanner(System.in);
+    private int CN;
+    private int PN;
+
+    double CB = 2000; // Current Balance
+    double SB = 1000; // Saving Balance
+
+    DecimalFormat df1 = new DecimalFormat("###,##0.00' Rupee'");
+    DecimalFormat df2 = new DecimalFormat("###,##0.00' Dollar'");
+
+    // Setters
+    void setCustomerNumber(int CN) {
+        this.CN = CN;
+    }
+
+    void setPINNumber(int PN) {
+        this.PN = PN;
+    }
+
+    // Getters
+    int getCustomerNumber() {
+        return CN;
+    }
+
+    int getPINNumber() {
+        return PN;
+    }
+
+    // Display Balances
+    void getCurrentBalance() {
+        System.out.println("\nThe Current Balance You have in your account is " + df1.format(CB));
+    }
+
+    void getSavingBalance() {
+        System.out.println("\nThe Saving Balance You have in your account is " + df2.format(SB));
+    }
+
+    // Current Account Withdraw
+    void getCurrentWithdrawInput() {
+        System.out.println("\nThe Current Balance You have in your account is " + df1.format(CB));
+        System.out.print("Enter the Withdrawal Amount: ");
+        double amount = sc.nextDouble();
+        if ((CB - amount) >= 0) {
+            calciCurrentWithdraw(amount);
+            System.out.println("Transaction Successful!");
+            System.out.println("The New Current Balance is " + df1.format(CB));
+        } else {
+            System.out.println("Insufficient Balance!");
+        }
+    }
+
+    double calciCurrentWithdraw(double amt) {
+        CB -= amt;
+        return CB;
+    }
+
+    // Current Account Deposit
+    void getCurrentDepositeInput() {
+        System.out.println("\nThe Current Balance You have in your account is " + df1.format(CB));
+        System.out.print("Enter the Deposit Amount: ");
+        double amount = sc.nextDouble();
+        calciCurrentDeposite(amount);
+        System.out.println("Transaction Successful!");
+        System.out.println("The New Current Balance is " + df1.format(CB));
+    }
+
+    double calciCurrentDeposite(double amt) {
+        CB += amt;
+        return CB;
+    }
+
+    // Saving Account Withdraw
+    void getSavingWithdrawInput() {
+        System.out.println("\nThe Saving Balance You have in your account is " + df2.format(SB));
+        System.out.print("Enter the Withdrawal Amount: ");
+        double amount = sc.nextDouble();
+        if ((SB - amount) >= 0) {
+            calciSavingWithdraw(amount);
+            System.out.println("Transaction Successful!");
+            System.out.println("The New Saving Balance is " + df2.format(SB));
+        } else {
+            System.out.println("Insufficient Balance!");
+        }
+    }
+
+    double calciSavingWithdraw(double amt) {
+        SB -= amt;
+        return SB;
+    }
+
+    // Saving Account Deposit
+    void getSavingDepositeInput() {
+        System.out.println("\nThe Saving Balance You have in your account is " + df2.format(SB));
+        System.out.print("Enter the Deposit Amount: ");
+        double amount = sc.nextDouble();
+        calciSavingDeposite(amount);
+        System.out.println("Transaction Successful!");
+        System.out.println("The New Saving Balance is " + df2.format(SB));
+    }
+
+    double calciSavingDeposite(double amt) {
+        SB += amt;
+        return SB;
+    }
+}
+
+class OptionMenu extends Account {
+    Scanner sc = new Scanner(System.in);
+    HashMap<Integer, Integer> data = new HashMap<>();
+
+    void getLogin() {
+        // Bank customer data
+        data.put(11111, 111);
+        data.put(11112, 222);
+        data.put(11113, 333);
+        data.put(11114, 444);
+        data.put(11115, 111);
+
+        System.out.println("Welcome to the SCOE!!");
+
+        while (true) {
+            try {
+                System.out.print("Enter customer number: ");
+                setCustomerNumber(sc.nextInt());
+
+                System.out.print("Enter customer PIN: ");
+                setPINNumber(sc.nextInt());
+
+                int P = getCustomerNumber();
+                int Q = getPINNumber();
+
+                if (data.containsKey(P) && data.get(P) == Q) {
+                    System.out.println("Login Successful!");
+                    break; // exit loop on successful login
+                } else {
+                    System.err.println("Invalid customer number or PIN. Try again.");
+                }
+            } catch (InputMismatchException e) {
+                System.err.println("Enter only numbers.");
+                sc.next(); // clear invalid input
+            }
+        }
+    }
+
+    void getAccountType() {
+        while (true) {
+            System.out.println("\nAccount type:");
+            System.out.println("1. Current Account");
+            System.out.println("2. Saving Account");
+            System.out.println("3. Exit");
+            System.out.print("Choice: ");
+            int ch = sc.nextInt();
+
+            switch (ch) {
+                case 1:
+                    getCurrentAccount();
+                    break;
+                case 2:
+                    getSavingAccount();
+                    break;
+                case 3:
+                    System.out.println("Thank you for visiting. VISIT again!");
+                    return;
+                default:
+                    System.err.println("Invalid choice! Try again.");
+            }
+        }
+    }
+
+    void getCurrentAccount() {
+        System.out.println("\nCurrent Account Menu:");
+        System.out.println("1. Balance Enquiry");
+        System.out.println("2. Withdraw Money");
+        System.out.println("3. Deposit Money");
+        System.out.println("4. Exit");
+        System.out.print("Choice: ");
+        int ch = sc.nextInt();
+
+        switch (ch) {
+            case 1:
+                getCurrentBalance();
+                break;
+            case 2:
+                getCurrentWithdrawInput();
+                break;
+            case 3:
+                getCurrentDepositeInput();
+                break;
+            case 4:
+                System.out.println("Returning to Account Type Menu...");
+                return;
+            default:
+                System.err.println("Invalid choice! Try again.");
+        }
+        getCurrentAccount(); // loop back to Current Account Menu
+    }
+
+    void getSavingAccount() {
+        System.out.println("\nSaving Account Menu:");
+        System.out.println("1. Balance Enquiry");
+        System.out.println("2. Withdraw Money");
+        System.out.println("3. Deposit Money");
+        System.out.println("4. Exit");
+        System.out.print("Choice: ");
+        int ch = sc.nextInt();
+
+        switch (ch) {
+            case 1:
+                getSavingBalance();
+                break;
+            case 2:
+                getSavingWithdrawInput();
+                break;
+            case 3:
+                getSavingDepositeInput();
+                break;
+            case 4:
+                System.out.println("Returning to Account Type Menu...");
+                return;
+            default:
+                System.err.println("Invalid choice! Try again.");
+        }
+        getSavingAccount(); // loop back to Saving Account Menu
+    }
+}
+
+public class RCOE {
+    public static void main(String[] args) {
+        OptionMenu rr = new OptionMenu();
+        rr.getLogin();
+        rr.getAccountType();
+    }
+}

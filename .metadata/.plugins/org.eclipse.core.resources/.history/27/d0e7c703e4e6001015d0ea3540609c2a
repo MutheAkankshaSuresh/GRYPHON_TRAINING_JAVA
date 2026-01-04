@@ -1,0 +1,52 @@
+package Calci;
+import java.lang.*;
+
+class Print
+{
+	void show()
+	{
+		
+	}
+}
+
+class Table_5
+{
+	Print F;
+	Table_5(Print f)
+	{
+		F=f;
+	}
+	
+	 void run()
+     {
+    	 F.show(); 
+     }
+}
+
+class Table_7
+{
+	Print S;
+     Table_7(Print s)
+     {
+    	S=s; 
+     }
+     
+     void run()
+     {
+    	S.show(); 
+     }
+}
+
+public class Calci {
+
+	public static void main(String[] args) {
+		
+      Print p1=new Print();
+      
+      Table_5 t1=new Table_5(p1);
+      Table_7 t1=new Table_7(p1);
+      
+      
+	}
+
+}

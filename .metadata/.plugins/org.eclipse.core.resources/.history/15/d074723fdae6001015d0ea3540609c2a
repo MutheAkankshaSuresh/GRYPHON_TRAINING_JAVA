@@ -1,0 +1,39 @@
+package bus;
+import java.util.*;
+import java.lang.*;
+class scoe_bus extends Thread
+{
+	int seat;
+	int avail=10;
+	scoe_bus(int seat)
+	{
+		this.seat=seat;
+	}
+	public void run()
+	{
+		if(avail>=seat)
+		{
+			System.out.println("Seats are booked");
+			avail=avail-seat;
+		}
+		else
+		{
+			System.out.println("Sorry Seats are not booked");
+		}
+	}
+}
+public class bus
+{
+	public static void main(String args[])
+	{
+		scoe_bus s1=new scoe_bus(2);
+		s1.start();
+		Thread t1=new Thread();
+		Thread t2=new Thread();
+		Thread t3=new Thread();
+//		scoe_bus s2=new scoe_bus("Sanskkruti");
+//		s2.start();
+//		scoe_bus s3=new scoe_bus("Priyanka");
+//		s3.start();
+	}
+}

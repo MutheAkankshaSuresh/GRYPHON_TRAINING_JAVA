@@ -1,0 +1,34 @@
+package Calci;
+import java.lang.*;
+
+class Calculate
+{
+	String name;
+	Calculate(String name)
+	{
+		this.name=name;
+	}
+	
+	public void run()
+	{
+		calculate_table();
+	}
+	public synchronized void calculate_table()
+	{
+		
+	}
+}
+public class Calci {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+      Calculate c1=new Calculate("user1");
+      Calculate c1=new Calculate("user2");
+      
+	}
+
+}

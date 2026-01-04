@@ -1,0 +1,25 @@
+import java.awt.*;
+import java.awt.event.*;
+public class Gui22 extends Frame
+{
+	Gui22()
+	{
+		this.addWindowListener(new WindowAdapter()
+		{
+			public void windowClosing(WindowEvent e)
+			{
+				System.exit(0);
+			}
+		});
+		Label l1=new Label("This is Window Closing Example");
+		this.add(l1);
+		setSize(300,300);
+		setTitle("SCOE");
+		setVisible(true);
+	}
+	public static void main(String[] args)
+	{
+		new Gui22();
+	}
+
+}

@@ -1,0 +1,65 @@
+package Bank;
+  class  Sync extends Thread
+{
+    String name;
+    static int money;
+    static int avail_bank_balance = 5000;   
+
+    Sync( int money)
+    {
+        this.money = money;
+    }
+    
+    public void run()
+    {
+    	start1();
+    }
+
+     static synchronized void start1()
+    {
+    	String name=Thread.currentThread().getName();
+    	
+          synchronized(Sync.class)
+          {
+            if(avail_bank_balance >= money)
+            {
+                avail_bank_balance -= money;
+                System.out.println(name + " Money Credited Successfully");
+            }
+            else
+            {
+                System.out.println(name +" Money not Credited. Available: " + avail_bank_balance);
+            }
+          }
+
+        
+      
+    }
+}
+
+public class Bank
+{
+    public static void main(String[] args)
+    {
+        Sync s1 = new Sync(2000);
+        
+      
+
+        Thread t1 = new Thread(s1);
+        Thread t2 = new Thread(s1);
+        
+        Sync s2 = new Sync(2000);
+        Thread t3 = new Thread(s2);
+        Thread t4 = new Thread(s2);
+        
+        t1.setName("UserA");
+        t2.setName("UserB");
+        t3.setName("UserC");
+        t4.setName("UserD");
+
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}

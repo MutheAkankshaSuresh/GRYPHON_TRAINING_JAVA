@@ -1,0 +1,58 @@
+package Synchronized_block;
+
+ class Sync implements Runnable
+{
+    String name;
+    int ticket;
+    static int avail_ticket = 10;   
+
+    Sync(String name, int ticket)
+    {
+        this.name = name;
+        this.ticket = ticket;
+    }
+
+    public synchronized void run()
+    {
+        
+        for(int i = 1; i <= 3; i++)
+        {
+            System.out.println("Hello " + name);
+        }
+
+        
+        synchronized(this)
+        {
+            if(avail_ticket >= ticket)
+            {
+                avail_ticket -= ticket;
+                System.out.println(name + " ticket granted");
+            }
+            else
+            {
+                System.out.println(name +" ticket not granted. Available: " + avail_ticket);
+            }
+        }
+
+        
+        for(int i = 1; i <= 3; i++)
+        {
+            System.out.println("Bye " + name);
+        }
+    }
+}
+
+public class Synchronized_block
+{
+    public static void main(String[] args)
+    {
+        Sync s1 = new Sync("UserA", 6);
+        Sync s2 = new Sync("UserB", 7);
+
+        Thread t1 = new Thread(s1);
+        Thread t2 = new Thread(s2);
+
+        t1.start();
+        t2.start();
+    }
+}

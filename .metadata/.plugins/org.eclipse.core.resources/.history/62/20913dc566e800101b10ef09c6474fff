@@ -1,0 +1,73 @@
+import java.awt.*;
+import javax.swing.*;
+public class Layout001 extends JFrame
+{
+	JFrame jf;
+	Label l1,l2;
+	TextField tf1,tf2;
+	Button b1,b2,b3;
+
+	public Layout001() {
+		
+		jf=new JFrame();
+		jf.setSize(400,150);
+		l1=new Label("Enter Name");
+		l2=new Label("Enter Name");
+		
+		tf1=new TextField(10);
+		tf2=new TextField(10);
+		
+		b1=new Button("Clear");
+		b1=new Button("Submit");
+		b1=new Button("Edit");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

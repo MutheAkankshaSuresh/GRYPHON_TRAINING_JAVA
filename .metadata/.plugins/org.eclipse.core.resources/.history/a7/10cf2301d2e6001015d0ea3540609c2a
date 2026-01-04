@@ -1,0 +1,60 @@
+package multi;
+import java.lang.*;
+//STEPS
+//step1: Import LAN package lang.pkg (by default)
+//step2: A) extending Thread class
+//       B) implementing Runnable INterface (Best Approach)
+//step3: Method = Initialize Run method
+//step4:
+//step5: implementing run method/application
+//step6: call the start() method
+
+
+class mutli2
+{
+	void print()
+	{
+		try
+		{
+			for(int i=1;i<=3;i++)
+			{
+				System.out.println("Bye");
+				Thread.sleep(2000);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			
+		}
+	}
+}
+
+public class multi {
+
+	/**
+	 * Multithreading is when one program uses multiple threads 
+	 * to perform tasks concurrently while sharing the same resources.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		multi2 m1=new multi2();
+		
+		
+		try
+		{
+			for(int i=1;i<=3;i++)
+			{
+				System.out.println("Hello");
+				Thread.sleep(2000);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			
+		}
+		
+		void print();
+
+	}
+
+}

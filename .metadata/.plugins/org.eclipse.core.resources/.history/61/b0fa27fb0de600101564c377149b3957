@@ -1,0 +1,111 @@
+package DSA_01;
+
+import java.util.Scanner;
+
+public class DSA_01 {
+	public static void main(String[] args) {
+		System.out.println("Enter the Income of individual");
+		Scanner sc=new Scanner (System.in);
+		double ammount=sc.nextDouble();
+		System.out.println("Enter the number of members in your family member");
+		int mem=sc.nextInt();
+		System.out.println("Enter the tax you pay");
+		int tax=sc.nextInt();
+		System.out.println("Enter the no of childrens pursuing higher education");
+		int child_edu=sc.nextInt();
+		System.out.println("Have you been enrolled in any scheme of government where you get the money.. [1] or[0]");
+		int scheme=sc.nextInt();
+		System.out.println("How many money you get from the scheme of government");
+		int scheme_money=sc.nextInt();
+		System.out.println("Do you have FarmLand 1 or 0");
+		int farm=sc.nextInt();
+		System.out.println("How much Farm land do you have");
+		int farm_land=sc.nextInt();
+		System.out.println("How much Production you get from Farm land ");
+		int farm_production=sc.nextInt();
+		System.out.println("Enter 1 or 0 if you have loan");
+		int loan=sc.nextInt();
+		System.out.println("Enter amount of loan you have have");
+		int loan_amount=sc.nextInt();
+      if(ammount>=800000)
+      {
+      if(tax>=200000)
+      {
+    	 if(mem<4)
+      {
+    	 System.out.println("The family is not eligible for ration card"); 
+      }
+      else
+      {
+    	  if(child_edu<=2)
+      {
+    	 System.out.println("The family get 30 % off on taxes");   
+      }
+      else
+      {
+    	 System.out.println("The family will not get 30 % off on any taxes");   
+      }
+      }
+      }
+      else
+      {
+    	if(scheme==0)
+      {
+    	  System.out.println("The family will get 10000 rupee every year"); 
+      }
+      else
+      {
+    	  if(scheme_money<=50000)
+      {
+    	  System.out.println("The family not get any money through scheme "); 
+      }
+      else
+      {
+    	  System.out.println("The family got 2000 ruppe every year"); 
+      }
+      }  
+      }
+      } //
+      else
+      {
+      if(farm==1)
+      {
+    	if(farm_land<2)
+      {
+    	 System.out.println("The individual is eligible for ration card scheme"); 
+      }
+      else
+      {
+    	  if(farm_production>=60000)
+      {
+    	   System.out.println("The individual is eligible for upas yojna scheme"); 
+      }
+      else
+      {
+    	   System.out.println("The individual is eligible for geting 50% off on  eduction of their childrens"); 
+      }
+      }  
+      }
+      else
+      {
+    	  if(loan==0)
+      {
+    	 System.out.println("The individual is eligible for raksha scheme where he will get 40 % off on any products ");  
+      }
+      else
+      {
+    	  if(loan_amount>100000)
+      {
+    	  System.out.println("The individual is eligible for 10% discount on shopping");   
+      }
+      else
+      {
+    	  System.out.println("The individual is eligible for pradhan mantri yojana"); 
+      }
+      }
+      } 
+      }
+      
+	}
+
+}

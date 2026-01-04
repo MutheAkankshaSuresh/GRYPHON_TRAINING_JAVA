@@ -1,0 +1,17 @@
+package Layout01;
+import java.awt.*;
+import javax.swing.*;
+public class Layout01 extends JFrame
+{
+
+	public Layout01() {
+		
+	}
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

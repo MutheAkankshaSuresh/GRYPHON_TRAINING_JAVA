@@ -1,0 +1,36 @@
+package bus;
+import java.lang.*;
+import java.util.*;
+
+class Ticket
+{
+	String name;
+	Ticket(String name)
+	{
+		this.name=name;
+	}
+	
+}
+public class bus {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter you name");
+		name=sc.next();
+//        Thread t1=new Thread("Akanksha");
+//        Thread t2=new Thread("Sanskruti");
+//        Thread t3=new Thread("Priyanka");
+//        t1.start();
+//        t2.start();
+//        t3.start();
+        
+        
+		
+	}
+
+}

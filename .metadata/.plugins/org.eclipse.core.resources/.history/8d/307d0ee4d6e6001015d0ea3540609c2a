@@ -1,0 +1,46 @@
+package bus;
+import java.lang.*;
+import java.util.*;
+
+class Ticket
+{
+	Scanner sc=new Scanner(System.in);
+	String name;
+	int seat_avail=10;
+	int seat;
+	Ticket(String name)
+	{
+		this.name=name;
+	}
+	
+	public void run()
+	{
+		System.out.println("Enter the number of seat you want to book");
+		seat=sc.nextInt();
+	}
+}
+public class bus {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter you name");
+		name=sc.next();
+		Ticket t1=new Ticket("name");
+		t1.start();
+//        Thread t1=new Thread("Akanksha");
+//        Thread t2=new Thread("Sanskruti");
+//        Thread t3=new Thread("Priyanka");
+//        t1.start();
+//        t2.start();
+//        t3.start();
+        
+        
+		
+	}
+
+}
