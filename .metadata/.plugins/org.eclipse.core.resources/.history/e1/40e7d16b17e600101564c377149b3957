@@ -1,0 +1,158 @@
+package Containment;
+import java.util.*;
+//In java language containment is also know as composition which is a concept of OOP in which 1 class contains the object of another class as a member 
+//it represents has-a relationship
+
+//key points of the containment
+//1) The class has the another object object
+//2) Code Reusability - Instead of Inheriting (You can reuse the functionality of using object of another class)
+//3) Flexibility- Easeir to change relationship compared to inheritance
+//4) Use in real time Application like Library contains Books / College contains Departments
+
+
+class Course
+{
+	String c_name;
+	int credits;
+	Course(String c_name,int credits)
+	{
+	    this.c_name=c_name;
+	    this.credits=credits;
+	    
+	}
+	
+	void showCourses()
+	    {
+	    	System.out.println("Couses :"+c_name+" | Credits :"+credits);
+	    }
+}
+
+
+class Professor
+{
+	String p_name;
+	List<Course> courses;
+	Professor(String p_name)
+	{
+		this.p_name=p_name;
+		this.courses=new ArrayList();
+	}
+	
+	void addcourses(Course c)
+	{
+	  	courses.add(c);
+	}
+	
+	void showProfessor()
+	{
+		 System.out.println("Professors :"+p_name);
+		  for( Course cour: courses)
+		 {
+			 cour.showCourses();
+		 }
+	}
+}
+
+
+class Department
+{
+     String	d_name;
+     List<Professor> professors;
+	 Department(String d_name)
+	 {
+		this.d_name=d_name;
+		this.professors=new ArrayList();
+	 }
+	 void addProfessors(Professor p)
+	{
+	  	professors.add(p);
+	}
+	 
+	 void showDepartment()
+	 {
+		 System.out.println("Depatment :"+d_name);
+		 for(Professor pro:professors)
+		 {
+			 pro.showProfessor();
+		 }
+	 }
+}
+
+
+class University
+{
+	String u_name;
+	List<Department> department;
+   University(String u_name)
+   {
+	   this.u_name=u_name;
+	   this.department=new ArrayList();
+   }
+   void addDepartment(Department d)
+   {
+	department.add(d);   
+   }
+   
+   void showUniversity()
+   {
+	   System.out.println("Univerisity Name :" +u_name);
+	   for(Department dep : department)
+	   {
+		   dep.showDepartment();
+	   }
+   }
+}
+
+public class Containment {
+
+	
+	public static void main(String[] args) {
+	
+		//create the courses
+         Course	java=new Course("Java Programming",4);
+         Course	dbms=new Course("Database System ",3);
+         Course	ai=new Course("Artificial Intelligence",5);
+         Course	ml=new Course("Machine Learning",5);
+         Course	ds=new Course("Data Science",4);
+         Course	chem=new Course("Chemistry",4);
+         Course	phy=new Course("Physics ",3);
+         Course	maths=new Course("Maths",5);
+         
+         
+         //create Professors and assigned courses         
+         Professor pf1=new Professor("Prof.S.A Shivakar");
+         pf1.addcourses(java);
+         pf1.addcourses(ml);
+         pf1.addcourses(phy);
+         Professor pf2=new Professor("Prof.Bhambre");
+         pf2.addcourses(ds);
+         pf2.addcourses(ai);
+         pf2.addcourses(chem);
+         pf2.addcourses(maths);
+         Professor pf3=new Professor("Prof.Houle");
+         pf3.addcourses(dbms);
+         pf3.addcourses(ai);
+         
+         //create Departments and assigned professors
+         Department cs=new Department("Computer Science Department");
+         cs.addProfessors(pf1);
+         cs.addProfessors(pf2);
+         Department it=new Department("Information Technology Department");
+         it.addProfessors(new Professor("Prof.Varma"));
+         //This is new professor with no courses 
+         Department aids=new Department("Artificial Intelligence & Data Science Department");
+         aids.addProfessors(pf2);
+         
+         //create Universities and assigned departments
+         
+         University u1=new University("Pune University");
+         u1.addDepartment(cs);
+         u1.addDepartment(it);
+         University u2=new University("Mumbai University");
+         u2.addDepartment(aids);
+         
+         u1.showUniversity();
+    
+
+}
+}

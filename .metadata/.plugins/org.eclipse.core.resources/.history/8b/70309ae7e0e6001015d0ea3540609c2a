@@ -1,0 +1,57 @@
+package Calci;
+import java.lang.*;
+
+class Calculate extends Thread
+{
+	String name;
+	Calculate(String name)
+	{
+		this.name=name;
+	}
+	
+	public void run()
+	{
+			calculate_table_5();	
+			
+		
+	}
+	public synchronized void calculate_table_5()
+	{
+		System.out.println("Welcome User 1: ");
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(5*i);
+		}
+		
+		System.out.println("Welcome User 2: ");
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(7*i);
+		}
+	}
+	
+	
+}
+public class Calci {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+      Calculate c1=new Calculate("user1");
+      //Calculate c2=new Calculate("user2");
+     
+      
+      Thread t1=new Thread(c1);
+      Thread t2=new Thread(c1);
+      
+      
+      t1.start();
+      
+      
+      
+	}
+
+}

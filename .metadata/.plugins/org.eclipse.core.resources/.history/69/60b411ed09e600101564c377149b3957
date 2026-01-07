@@ -1,0 +1,109 @@
+package DSA_01;
+
+import java.util.Scanner;
+
+public class DSA_01 {
+	public static void main(String[] args) {
+		System.out.println("Enter the Income of individual");
+		Scanner sc=new Scanner (System.in);
+		double ammount=sc.nextDouble();
+		System.out.println("Enter the number of members in your family member");
+		int mem=sc.nextInt();
+		System.out.println("Enter the tax you pay");
+		int tax=sc.nextInt();
+		System.out.println("Enter the no of childrens pursuing higher education");
+		int child_edu=sc.nextInt();
+		System.out.println("Have you been enrolled in any scheme of government where you get the money.. [1] or[0]");
+		int scheme=sc.nextInt();
+		System.out.println("How many money you get from the scheme of government");
+		int scheme_money=sc.nextInt();
+		System.out.println("Do you have FarmLand 1 or 0");
+		int farm=sc.nextInt();
+		System.out.println("How much Farm land do you have");
+		int farm_land=sc.nextInt();
+		System.out.println("How much Production you get Farm land do you have");
+		int farm_production=sc.nextInt();
+		System.out.println("Enter 1 or 0 if you have loan");
+		int loan=sc.nextInt();
+      if(ammount>=800000)
+      {
+      if(tax>=200000)
+      {
+    	 if(mem<4)
+      {
+    	 System.out.println("The family got Yellow card for ration"); 
+      }
+      else
+      {
+    	  if(child_edu<=2)
+      {
+    	 System.out.println("The family got Red card for ration");   
+      }
+      else
+      {
+    	 System.out.println("The family got green card for ration");   
+      }
+      }
+      }
+      else
+      {
+    	if(scheme==0)
+      {
+    	  System.out.println("The family got blue card for ration"); 
+      }
+      else
+      {
+    	  if(scheme_money<=50000)
+      {
+    	  System.out.println("The family got black card for ration"); 
+      }
+      else
+      {
+    	  System.out.println("The family got orange card for ration"); 
+      }
+      }  
+      }
+      } //
+      else
+      {
+      if(farm==1)
+      {
+    	if(farm_land<2)
+      {
+    	 System.out.println("The individual is eligible for abc scheme"); 
+      }
+      else
+      {
+    	  if(farm_production>=60000)
+      {
+    	   System.out.println("The individual is eligible for upas yojna scheme"); 
+      }
+      else
+      {
+    	   System.out.println("The individual is eligible for geting 50% off on  eduction of their childrens"); 
+      }
+      }  
+      }
+      else
+      {
+    	  if()
+      {
+    	  
+      }
+      else
+      {
+    	  if()
+      {
+    	  
+      }
+      else
+      {
+    	  
+      }
+      }
+      } 
+      }
+      
+	}
+
+}

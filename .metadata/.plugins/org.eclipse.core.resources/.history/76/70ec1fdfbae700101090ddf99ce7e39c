@@ -1,0 +1,17 @@
+package Stack_sort;
+
+public class Stack_sort {
+
+	public Stack_sort() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

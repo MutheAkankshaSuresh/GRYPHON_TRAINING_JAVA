@@ -1,0 +1,50 @@
+package Containment;
+import java.util.*;
+//In java language containment is also know as composition which is a concept of OOP in which 1 class contains the object of another class as a member 
+//it represents has-a relationship
+
+//key points of the containment
+//1) The class has the another object object
+//2) Code Reusability - Instead of Inheriting (You can reuse the functionality of using object of another class)
+//3) Flexibility- Easeir to change relationship compared to inheritance
+//4) Use in real time Application like Library contains Books / College contains Departments
+
+
+class Course
+{
+	
+}
+
+
+class Professor
+{
+	
+}
+
+
+class Department
+{
+	
+}
+
+
+class University
+{
+	
+}
+
+public class Containment {
+
+	
+	public static void main(String[] args) {
+	
+		//create the courses
+         Course	java=new Course("Java Programming");
+         Course	dbms=new Course("Database System ");
+         Course	ai=new Course("Artificial Intelligence");
+         Course	ml=new Course("Machine Learning");
+         Course	ds=new Course("Data Science");
+    
+
+}
+}

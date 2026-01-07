@@ -1,0 +1,17 @@
+package Synchronized_block;
+
+public class Synchronized_block {
+
+	public Synchronized_block() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

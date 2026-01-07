@@ -1,0 +1,25 @@
+package LinkedList;
+
+public class LinkedList {
+
+	public LinkedList() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LinkedList<String> list1=new LinkedList<>();
+		list1.addfirst("Mangoo");
+		list1.add("Orange");
+		list1.add("Kiwi");
+		list1.add("Strawberry");
+
+	}
+
+	
+
+}

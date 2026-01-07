@@ -1,0 +1,20 @@
+import java.awt.event.*;
+import java.awt.*;
+public class gui extends Frame
+{
+	gui()
+	{
+		Button b1=new Button("Home");
+		b1.setBounds(30,100,80,30);
+		add(b1);
+		setSize(300,300);
+		setLayout(null);
+		setVisible(true);
+	}
+	public static void main(String args[])
+	{
+	    new gui();  
+	    
+	}
+
+}

@@ -1,0 +1,38 @@
+package bus;
+
+class ScoeBus implements Runnable {
+
+    int seatsNeeded;
+    static int availableSeats = 5;
+
+    ScoeBus(int seatsNeeded) {
+        this.seatsNeeded = seatsNeeded;
+    }
+
+   
+    public synchronized void run() {
+        String name = Thread.currentThread().getName();
+
+        if (availableSeats >= seatsNeeded) {
+            System.out.println(name + " seats booked");
+            availableSeats -= seatsNeeded;
+        } else {
+            System.out.println(name + " sorry seats not available");
+        }
+    }
+}
+
+public class bus {
+    public static void main(String[] args) {
+
+        ScoeBus booking = new ScoeBus(2);
+
+        Thread t1 = new Thread(booking, "Sanskkruti");
+        Thread t2 = new Thread(booking, "Priyanka");
+        Thread t3 = new Thread(booking, "Dora");
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}

@@ -1,0 +1,61 @@
+package bus;
+import java.lang.*;
+import java.util.*;
+
+class Ticket extends Thread
+{
+	Scanner sc=new Scanner(System.in);
+	String name;
+	int seat_avail=10;
+	int seat;
+	Ticket(String name)
+	{
+		this.name=name;
+	}
+	
+	public void run()
+	{
+		
+		bookTicket();
+		
+		
+	}
+	
+	void bookTicket()
+	{
+		do
+		{
+		System.out.println("Enter you name");
+		name=sc.next();
+		System.out.println("Enter the number of seat you want to book");
+		seat=sc.nextInt();
+		System.out.println("The Total seats availabe are "+seat_avail);
+		seat_avail=seat_avail-seat;
+		System.out.println(name+" Your ticket is successfully booked!! Congooooo");
+		}while(seat_avail<10);
+		System.out.println("The seats are not available sorry!!!");
+	}
+}
+public class bus {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name;
+		Scanner sc=new Scanner(System.in);
+		Ticket t1=new Ticket("name");
+		t1.start();
+//        Thread t1=new Thread("Akanksha");
+//        Thread t2=new Thread("Sanskruti");
+//        Thread t3=new Thread("Priyanka");
+//        t1.start();
+//        t2.start();
+//        t3.start();
+        
+        
+		
+	}
+
+}

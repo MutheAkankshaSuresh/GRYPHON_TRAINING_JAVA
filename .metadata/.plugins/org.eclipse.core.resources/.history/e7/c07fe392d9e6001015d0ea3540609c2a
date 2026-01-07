@@ -1,0 +1,13 @@
+package bus;
+import java.util.*;
+class scoe_bus
+{
+	
+}
+public class bus
+{
+	public static void main(String args[])
+	{
+		
+	}
+}

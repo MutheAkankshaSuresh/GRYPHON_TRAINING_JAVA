@@ -1,0 +1,22 @@
+
+package Synchronized_block;
+import java.util.Scanner;
+import java.lang.*;
+
+class Sync
+
+{
+	
+}
+public class Synchronized_block {
+
+	
+
+		
+	public static void main(String[] args) {
+		
+     Sync s1=new Sync("");
+     
+	}
+
+}

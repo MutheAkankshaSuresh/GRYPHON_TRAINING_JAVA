@@ -1,0 +1,14 @@
+package multi;
+
+public class multi {
+
+	/**
+	 * Multithreading is when one program uses multiple threads 
+	 * to perform tasks concurrently while sharing the same resources.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
